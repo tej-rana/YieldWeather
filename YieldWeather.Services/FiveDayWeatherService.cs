@@ -9,7 +9,7 @@ namespace YieldWeather.Services
 {
     public class FiveDayWeatherService : IService
     {
-        public IEnumerable<IContract> Get(params object[] objects)
+        public IEnumerable<IContract> Get(IServiceContract contract)
         {
             throw new NotImplementedException();
         }

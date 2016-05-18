@@ -13,13 +13,10 @@ namespace YieldWeather.Services
     public interface IService
     {
         /// <summary>
-        /// Gets a contracts depending on the parameters resolved during runtime.
-        /// This allows controllers to call a single method passing multiple parameters.
-        /// It depends on the implmenting class to resolve the parameters.
-        /// I could easily have set string token but it only allows weather contract exchanges.
+        /// Gets a collection of IContracts (domain) for IServiceContract (service)
         /// </summary>
-        /// <param name="objects">Array of dynamic objects.</param>
+        /// <param name="IServiceContract">Service contract</param>
         /// <returns>Collection of IContract</returns>
-        IEnumerable<IContract> Get(params object[] objects);
+        IEnumerable<IContract> Get(IServiceContract serviceContract);
     }
 }
