@@ -129,7 +129,7 @@
                 <li>AutoMapper was added to make it more convinient and less error-prone when mapping response data into objects.</li>
                 <li>I am not 100% certain but I think the view models have to be classes and not interfaces. This means we cannot use IContract. But that's good because IContract is a domain level
                 object and not view level object.</li>
-                <li>Careful considerations need to be made when making injected services and instantiated controllers transient or singleton. When there is session level objects, singleton should be used.
+                <li>Careful considerations need to be made when making injected services and instantiated controllers transient or singleton. When there is session level objects, singleton should not be used.
                 I am not sure about Per Thread instantiation because IIS under the hood manages threads in its own thread pool. If threads are such a big concern then using something like a NodeJS server or even long polling using Websockets.</li>
            </ul>
         </div>        
