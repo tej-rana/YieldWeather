@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YieldWeather.Web", "YieldWeather.Web\YieldWeather.Web.csproj", "{E3D66EB4-45B6-4C45-9B0C-084203AA9326}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YieldWeather.Web", "YieldWeather\YieldWeather.Web.csproj", "{E3D66EB4-45B6-4C45-9B0C-084203AA9326}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YieldWeather.Services", "YieldWeather.Services\YieldWeather.Services.csproj", "{278B0C35-696E-491C-A55C-1DAB4FA4140D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YieldWeather.Services.Test", "YieldWeather.Services.Test\YieldWeather.Services.Test.csproj", "{E22A75BC-2728-4C76-9354-53E17D9C2DB8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YieldWeather.Domain", "YieldWeather.Domain\YieldWeather.Domain.csproj", "{122699E8-B0D4-4BBE-827E-D8302C2BAC13}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		{E22A75BC-2728-4C76-9354-53E17D9C2DB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E22A75BC-2728-4C76-9354-53E17D9C2DB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E22A75BC-2728-4C76-9354-53E17D9C2DB8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{122699E8-B0D4-4BBE-827E-D8302C2BAC13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{122699E8-B0D4-4BBE-827E-D8302C2BAC13}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{122699E8-B0D4-4BBE-827E-D8302C2BAC13}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{122699E8-B0D4-4BBE-827E-D8302C2BAC13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
