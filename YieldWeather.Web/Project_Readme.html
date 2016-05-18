@@ -119,6 +119,19 @@
                 <li><a href="http://openweathermap.org/current">Current weather data API endpoints</a></li>
                 <li><a href="http://openweathermap.org/forecast5">5 day weather forecast API endpoints</a></li>                
             </ul>
+        </div>      
+        
+        <div class="section">
+            <h2>Other configurations</h2>
+            <ul>
+                <li>Castle Windsor DI with Log4net is used for logging. This is instantiated through the same DI container.</li>
+                <li>ApplicationSettingsSecret.config should be placed outside of the root folder of the web directory to make it inaccessible from web users.</li>
+                <li>AutoMapper was added to make it more convinient and less error-prone when mapping response data into objects.</li>
+                <li>I am not 100% certain but I think the view models have to be classes and not interfaces. This means we cannot use IContract. But that's good because IContract is a domain level
+                object and not view level object.</li>
+                <li>Careful considerations need to be made when making injected services and instantiated controllers transient or singleton. When there is session level objects, singleton should be used.
+                I am not sure about Per Thread instantiation because IIS under the hood manages threads in its own thread pool. If threads are such a big concern then using something like a NodeJS server or even long polling using Websockets.</li>
+           </ul>
         </div>        
 
     </div>

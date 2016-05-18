@@ -223,6 +223,13 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="AppSettingsSecret.config" />
+    <Content Include="AppSettingsSecret.Debug.config">
+      <DependentUpon>AppSettingsSecret.config</DependentUpon>
+    </Content>
+    <Content Include="AppSettingsSecret.Release.config">
+      <DependentUpon>AppSettingsSecret.config</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
