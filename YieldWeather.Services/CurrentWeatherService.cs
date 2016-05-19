@@ -4,7 +4,6 @@ using System.IO;
 using System.Net;
 using YieldWeather.Domain;
 using YieldWeather.Services.Helper;
-using static YieldWeather.Services.Helper.ApplicationSettings;
 
 namespace YieldWeather.Services
 {
@@ -33,54 +32,19 @@ namespace YieldWeather.Services
             return null;
         }
 
-        private HttpWebRequest CreateWebRequest(string cityId, ForecastType forecastType, WeatherUnits units)
-        {
-            //TODO: clean up the magic string with Java style code-value lookup
+        private HttpWebRequest CreateWebRequest(string cityId, ApplicationSettings.ForecastType forecastType, ApplicationSettings.WeatherUnits units)
+        {  
 
+            //added this method to remove guess work of what parameter goes first
+            var requestUrl = WeatherHelper.GenerateUrl(forecastType, cityId,  units);
 
-            //build url and parameters for web request
-            string forecast_url = string.Empty;
-            string id_param = string.Empty;
-            string units_param = string.Empty;
-
-            switch (forecastType)
-            {
-                case ForecastType.CurrentWeather:
-                    forecast_url = CurrentWeather;
-                    break;
-                case ForecastType.FiveDayForecast:
-                    forecast_url = FiveDayForecast;
-                    break;
-                default:
-                    break; //TODO: can't get here Need to throw exception
-            }            
-
-            switch (units)
-            {
-                case WeatherUnits.Celsius:
-                    units_param = "&units=" + UnitsCelsuius;
-                    break;
-                case WeatherUnits.Farenheit:
-                    forecast_url = "&units=" + UnitsFarenheit;
-                    break;
-                default:
-                    break; //this is fine because default is Kelvin and takes no parameter
-            }
-
-            if (id_param == SydneyCityId)
-            {
-                id_param = "?id=" + SydneyCityId;
-            }
-            else
-            {
-                id_param = "?id=" + HobartCityId;
-            }
-
-            HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(forecast_url + id_param + units_param);
+            HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(requestUrl);
             webRequest.ContentType = "application/json;charset=\"utf-8\"";            
             webRequest.Method = "GET";
 
             return webRequest;
         }
+
+        
     }
 }

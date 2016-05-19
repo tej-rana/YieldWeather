@@ -1,11 +1,8 @@
 ﻿using Castle.MicroKernel.Registration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using Castle.Facilities.TypedFactory;
+using YieldWeather.Services;
 
 namespace YieldWeather.Web.DI
 {

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace YieldWeather.Domain
 {
@@ -14,27 +10,27 @@ namespace YieldWeather.Domain
         /// <summary>
         /// Minimum Temperature
         /// </summary>
-         Decimal MinTemp { get; set; }
+         double MinTemp { get; set; }
         /// <summary>
         /// Maximum Temperature
         /// </summary>
-         Decimal MaxTemp { get; set; }
+        double MaxTemp { get; set; }
 
         /// <summary>
         /// Air Pressure
         /// </summary>
-         Decimal AirPressure { get; set; }
+        double AirPressure { get; set; }
 
         /// <summary>
         /// Humidity
         /// </summary>
-         Int32 Humidity { get; set; }
+         int Humidity { get; set; }
 
 
         /// <summary>
         /// Rainfall
         /// </summary>
-         Int32 Rainfall { get; set; }
+        double Rainfall { get; set; }
         
     }
 }

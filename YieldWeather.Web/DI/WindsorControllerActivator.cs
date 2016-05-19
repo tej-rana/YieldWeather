@@ -23,7 +23,7 @@ namespace YieldWeather.Web.DI
 
 
         /// <summary>
-        /// Create a new instance of Controller
+        /// Create a new instance of ControllerC
         /// </summary>
         /// <param name="request">The Http Request Message Object</param>
         /// <param name="controllerDescriptor">The Controller Descriptor that describes the controller object</param>
