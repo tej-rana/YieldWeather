@@ -71,9 +71,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Helper\WeatherHelper.cs" />
+    <Compile Include="Helpers\WeatherHelper.cs" />
     <Compile Include="WeatherServiceTests.cs" />
-    <Compile Include="Helper\ApplicationSettings.cs" />
+    <Compile Include="Helpers\ApplicationSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -22,6 +22,7 @@ namespace YieldWeather.Web.DI
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             //first add support to resolve via Typed Factory. There are other ways to resolve. This is just one of them.
+            //https://github.com/castleproject/Windsor/blob/master/docs/typed-factory-facility-interface-based.md
             container.AddFacility<TypedFactoryFacility>();
 
             container.Register(
@@ -30,10 +31,10 @@ namespace YieldWeather.Web.DI
                 .Named("CurrentWeatherService")
                 .LifestyleTransient(),
                  Component.For<IService>()
-                .ImplementedBy<CurrentWeatherService>()
-                .Named("CurrentWeatherService")
+                .ImplementedBy<FiveDayWeatherService>()
+                .Named("FiveDayWeatherService")
                 .LifestyleTransient(),
-               Component.For<IServiceFactory>().AsFactory()
+                 Component.For<IServiceFactory>().AsFactory()
              );
         }
     }

@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Yield Weather</h1>
+    <p class="lead">The weather application is a simple web application to display current weather and 5 day forecast for two cities - Sydney, NSW and Hobart, Tazmania. The weather data is fetched by web service calls to http://openweathermap.org/api.</p>
+</div>
+
+<div class="row">
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <h2>Getting started</h2>
+        <p>
+            Select the city and the units to get current weather or 5 day forecasts.
+        </p>
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Current Weather</div>
+            <div class="panel-body">
+                <p>This displays the current weather. Please select the city and the units and hit go! </p>
+
+
+                <form role="form" action="Weather/GetCurrentWeather" method="post">
+                    <label for="city">Select City:</label>
+                    <select class="form-control" id="city">
+                        <option value="6619279">Sydney, NSW</option>
+                        <option value="2163355">Hobart, TAZ</option>
+                    </select>
+                    <br>
+                    <label for="unit">Select Units:</label>
+                    <select class="form-control" id="unit">
+                        <option value="metric">Celsius</option>
+                        <option value="imperial">Farenheit</option>
+                        <option value="default">Kelvin</option>
+                    </select>
+                    <br>
+                    <button type="submit" class="btn btn-default">GO!</button>
+                </form>
+
+
+
+            </div>
+        </div>
+        <!-- Table -->
+        <table class="table">
+            ...
+        </table>
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="panel-heading">5 Day Weather forecast</div>
+        <div class="panel-body">
+            <p>This displays the 5 day weather forecast. Please select the city and the units and hit go! </p>
+
+
+            <form role="form" action="Weather/GetFiveDayForecast" method="post">
+                <label for="city">Select City:</label>
+                <select class="form-control" id="city">
+                    <option value="6619279">Sydney, NSW</option>
+                    <option value="2163355">Hobart, TAZ</option>
+                </select>
+                <br>
+                <label for="units">Select Units:</label>
+                <select class="form-control" id="unit">
+                    <option value="metric">Celsius</option>
+                    <option value="imperial">Farenheit</option>
+                    <option value="default">Kelvin</option>
+                </select>
+                <br>
+                <button type="submit" class="btn btn-default">GO!</button>
+            </form>
+        </div>
+        <!-- Table -->
+        <table class="table">
+            ...
+        </table>
+    </div>
+</div>

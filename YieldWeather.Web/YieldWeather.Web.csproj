@@ -158,12 +158,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\WeatherController.cs" />
     <Compile Include="DI\ControllerInstaller.cs" />
     <Compile Include="DI\ServiceInstaller.cs" />
     <Compile Include="DI\WindsorControllerActivator.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ApplicationSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -198,9 +200,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Weather\About.cshtml" />
+    <Content Include="Views\Weather\Contact.cshtml" />
+    <Content Include="Views\Weather\Index.cshtml" />
     <Content Include="AppSettingsSecret.config" />
     <Content Include="AppSettingsSecret.Debug.config">
       <DependentUpon>AppSettingsSecret.config</DependentUpon>
@@ -211,7 +213,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

@@ -13,10 +13,10 @@ namespace YieldWeather.Services
     public interface IService
     {
         /// <summary>
-        /// Gets a collection of IContracts (domain) for IServiceContract (service)
+        /// Gets an IContract (domain) for IServiceContract (service)
         /// </summary>
         /// <param name="IServiceContract">Service contract</param>
-        /// <returns>Collection of IContract</returns>
-        IEnumerable<IContract> Get(IServiceContract serviceContract);
+        /// <returns>IContract</returns>
+        IContract Get(IServiceContract serviceContract);
     }
 }
