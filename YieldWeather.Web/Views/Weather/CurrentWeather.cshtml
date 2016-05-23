@@ -1,0 +1,27 @@
+﻿@model YieldWeather.Web.Models.WeatherResponseModel
+
+
+<h2>Current Weather Forecast</h2>
+<br />
+@ViewBag.City
+<br />
+<table class="table table-bordered">
+   
+    <tr>
+        <td>Min Temperature</td>
+        <td>Max Temperature</td>
+        <td>Air Pressure</td>
+        <td>Humidity</td>
+        <td>Rainfall</td>
+    </tr>
+        
+    
+        <tr>
+            <td>@Model.MinTemp</td>
+            <td>@Model.MaxTemp</td>
+            <td>@Model.AirPressure</td>
+            <td>@Model.Humidity</td>
+            <td>@Model.Rainfall</td>
+        </tr>
+   
+</table>

@@ -13,7 +13,7 @@ namespace YieldWeather.Services
         public IContract Get(IServiceContract contract)
         {
             //construct the request object
-            var httpWebRequest = CreateWebRequest(contract.CityId, contract.ForecastType, contract.Units);
+            var httpWebRequest = CreateWebRequest(contract.CityId, contract.ForecastType, contract.Unit);
 
             var responseText = string.Empty;
 

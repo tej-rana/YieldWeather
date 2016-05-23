@@ -1,0 +1,29 @@
+﻿@model IEnumerable<YieldWeather.Web.Models.WeatherResponseModel>
+
+
+<h2>Five Day Weather Forecast</h2>
+<br />
+@ViewBag.City
+<br />
+
+<table class="table table-bordered">
+   
+    <tr>
+        <td>Min Temperature</td>
+        <td>Max Temperature</td>
+        <td>Air Pressure</td>
+        <td>Humidity</td>
+        <td>Rainfall</td>
+    </tr>
+   @foreach (var item in @Model)
+   {
+
+        <tr>
+            <td>@item.MinTemp</td>
+            <td>@item.MaxTemp</td>
+            <td>@item.AirPressure</td>
+            <td>@item.Humidity</td>
+            <td>@item.Rainfall</td>
+        </tr>
+   }
+</table>

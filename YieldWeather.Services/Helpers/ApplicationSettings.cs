@@ -19,7 +19,7 @@ namespace YieldWeather.Services.Helper
         public static readonly string HobartCityId = "?id=" + ConfigurationManager.AppSettings["hobart_city_id"];
 
         //token
-        public static readonly string Token = "&APPID" + ConfigurationManager.AppSettings["token"];
+        public static readonly string Token = "&APPID=" + ConfigurationManager.AppSettings["token"];
 
         //units
         public static readonly string UnitsCelsuius = "&units=" + ConfigurationManager.AppSettings["units_celsius"];

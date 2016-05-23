@@ -42,11 +42,13 @@ namespace YieldWeather.Services.Helper
                     units_param = ApplicationSettings.UnitsCelsuius;
                     break;
                 case ApplicationSettings.WeatherUnits.Farenheit:
-                    forecast_url = ApplicationSettings.UnitsFarenheit;
+                    units_param = ApplicationSettings.UnitsFarenheit;
                     break;
                 default:
                     break; //this is fine because default is Kelvin and takes no parameter
             }
+            //TODO: Fix this magic variable
+            id_param = "?id=" + id_param;
 
             if (id_param == ApplicationSettings.SydneyCityId)
             {

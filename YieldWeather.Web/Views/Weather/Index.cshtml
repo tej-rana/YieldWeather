@@ -1,4 +1,6 @@
-﻿@{
+﻿@model YieldWeather.Web.Models.WeatherRequestModel
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -20,32 +22,27 @@
             <div class="panel-body">
                 <p>This displays the current weather. Please select the city and the units and hit go! </p>
 
-
-                <form role="form" action="Weather/GetCurrentWeather" method="post">
+                @using (Html.BeginForm("GetCurrentWeather", "Weather", null, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
                     <label for="city">Select City:</label>
-                    <select class="form-control" id="city">
-                        <option value="6619279">Sydney, NSW</option>
-                        <option value="2163355">Hobart, TAZ</option>
-                    </select>
-                    <br>
+
+                    @Html.DropDownListFor(model => model.CityId, new SelectList(new[] { new KeyValuePair<string, int>("Sydney, NSW", 6619279), new KeyValuePair<string, int>("Hobart, TAZ", 2163355) }, "Value", "Key"), new { @class = "form-control" });
+                    <br />
                     <label for="unit">Select Units:</label>
-                    <select class="form-control" id="unit">
-                        <option value="metric">Celsius</option>
-                        <option value="imperial">Farenheit</option>
-                        <option value="default">Kelvin</option>
-                    </select>
-                    <br>
-                    <button type="submit" class="btn btn-default">GO!</button>
-                </form>
+
+                    @Html.DropDownListFor(model => model.Unit,  new SelectList(new[] { new KeyValuePair<string, string>("Celsius", "metric"), new KeyValuePair<string, string>("Farenheit", "imperial"), new KeyValuePair<string, string>("Kelvin", "default") }, "Value", "Key"), new { @class = "form-control" });
+                    <br />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">GO!</button>
+                    </span>
+                }
+
 
 
 
             </div>
         </div>
-        <!-- Table -->
-        <table class="table">
-            ...
-        </table>
+       
     </div>
     <div class="col-sm-4 col-md-4 col-lg-4">
         <div class="panel-heading">5 Day Weather forecast</div>
@@ -53,22 +50,20 @@
             <p>This displays the 5 day weather forecast. Please select the city and the units and hit go! </p>
 
 
-            <form role="form" action="Weather/GetFiveDayForecast" method="post">
+            @using (Html.BeginForm("GetFiveDayForecast", "Weather", null, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
                 <label for="city">Select City:</label>
-                <select class="form-control" id="city">
-                    <option value="6619279">Sydney, NSW</option>
-                    <option value="2163355">Hobart, TAZ</option>
-                </select>
-                <br>
-                <label for="units">Select Units:</label>
-                <select class="form-control" id="unit">
-                    <option value="metric">Celsius</option>
-                    <option value="imperial">Farenheit</option>
-                    <option value="default">Kelvin</option>
-                </select>
-                <br>
-                <button type="submit" class="btn btn-default">GO!</button>
-            </form>
+
+                    @Html.DropDownListFor(model => model.CityId, new SelectList(new[] { new KeyValuePair<string, int>("Sydney, NSW", 6619279), new KeyValuePair<string, int>("Hobart, TAZ", 2163355) }, "Value", "Key"), new { @class = "form-control" });
+                <br />
+                <label for="unit">Select Units:</label>
+
+                    @Html.DropDownListFor(model => model.Unit, new SelectList(new[] { new KeyValuePair<string, string>("Celsius", "metric"), new KeyValuePair<string, string>("Farenheit", "imperial"), new KeyValuePair<string, string>("Kelvin", "default") }, "Value", "Key"), new { @class = "form-control" });
+                <br />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">GO!</button>
+                    </span>
+            }
         </div>
         <!-- Table -->
         <table class="table">

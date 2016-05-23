@@ -9,7 +9,7 @@ namespace YieldWeather.Web.DI
     /// Tells windsor (our dependecy injection) how to find controllers and
     /// how to install them and describes their lifecycle - e.g per request or singleton
     /// </summary>
-    public class ControllerInstaller
+    public class ControllerInstaller : IWindsorInstaller
     {
         /// <summary>
         /// Registers the interfaces (not classes) for injection into the DI container 

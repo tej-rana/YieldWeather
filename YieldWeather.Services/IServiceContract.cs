@@ -26,6 +26,6 @@ namespace YieldWeather.Services
         /// <summary>
         /// The units of measurement for temperature
         /// </summary>
-        WeatherUnits Units { get; set; }
+        WeatherUnits Unit { get; set; }
     }
 }
